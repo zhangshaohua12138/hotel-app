@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级筛选</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button onclick="history.back()" class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">高级筛选</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+    <form class="p-4 space-y-4 bg-white rounded-lg shadow-sm max-w-lg mx-auto mt-6">
+        <div>
+            <label class="block text-gray-700 mb-1">价格区间（元）</label>
+            <div class="flex space-x-2">
+                <input type="number" class="w-1/2 px-3 py-2 border border-gray-200 rounded focus:outline-none" placeholder="最低价">
+                <input type="number" class="w-1/2 px-3 py-2 border border-gray-200 rounded focus:outline-none" placeholder="最高价">
+            </div>
+        </div>
+        <div>
+            <label class="block text-gray-700 mb-1">星级</label>
+            <div class="flex space-x-2">
+                <label class="flex items-center"><input type="checkbox" class="mr-1">经济型</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">舒适型</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">高端型</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">豪华型</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">奢华型</label>
+            </div>
+        </div>
+        <div>
+            <label class="block text-gray-700 mb-1">酒店类型</label>
+            <div class="flex space-x-2 flex-wrap">
+                <label class="flex items-center"><input type="checkbox" class="mr-1">商务</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">度假</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">亲子</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">公寓</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">民宿</label>
+            </div>
+        </div>
+        <div>
+            <label class="block text-gray-700 mb-1">设施</label>
+            <div class="flex space-x-2 flex-wrap">
+                <label class="flex items-center"><input type="checkbox" class="mr-1">游泳池</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">健身房</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">停车场</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">免费WiFi</label>
+                <label class="flex items-center"><input type="checkbox" class="mr-1">餐厅</label>
+            </div>
+        </div>
+        <div>
+            <label class="block text-gray-700 mb-1">地理位置</label>
+            <input type="text" class="w-full px-3 py-2 border border-gray-200 rounded focus:outline-none" placeholder="输入地标、商圈或地址">
+        </div>
+        <button type="submit" class="w-full py-2 bg-blue-500 text-white rounded font-medium">筛选</button>
+    </form>
+</body>
+</html> 
