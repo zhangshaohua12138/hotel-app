@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动报名</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">活动报名</h1>
+            <button class="text-gray-600">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="pt-14 pb-20">
+        <!-- 活动信息 -->
+        <div class="bg-white p-4 mb-4">
+            <h2 class="text-xl font-bold mb-2">2024年度技术创新活动</h2>
+            <div class="text-gray-600 text-sm">
+                <p class="mb-1"><i class="far fa-calendar-alt mr-2"></i>2024年4月15日 09:00-17:00</p>
+                <p><i class="fas fa-map-marker-alt mr-2"></i>上海浦东香格里拉大酒店</p>
+            </div>
+        </div>
+
+        <!-- 报名表单 -->
+        <div class="bg-white p-4">
+            <h3 class="text-lg font-semibold mb-4">报名信息</h3>
+            <form>
+                <!-- 姓名 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">姓名</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入姓名">
+                </div>
+
+                <!-- 手机号 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">手机号</label>
+                    <input type="tel" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入手机号">
+                </div>
+
+                <!-- 邮箱 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">邮箱</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入邮箱">
+                </div>
+
+                <!-- 公司 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">公司</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入公司名称">
+                </div>
+
+                <!-- 职位 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">职位</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入职位">
+                </div>
+
+                <!-- 备注 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">备注</label>
+                    <textarea class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" rows="3" placeholder="请输入备注信息"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold">
+            提交报名
+        </button>
+    </div>
+</body>
+</html> 

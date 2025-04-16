@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发票信息</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- 顶部导航栏 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600" onclick="history.back()">
+                <i class="fas fa-chevron-left text-lg"></i>
+            </button>
+            <h1 class="text-lg font-semibold">发票信息</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <div class="pt-16 pb-20 px-4">
+        <!-- 发票类型选择 -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h3 class="text-lg font-semibold mb-4">发票类型</h3>
+            <div class="space-y-4">
+                <label class="flex items-center">
+                    <input type="radio" name="invoice_type" class="form-radio text-blue-500" checked>
+                    <span class="ml-2">增值税普通发票</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="invoice_type" class="form-radio text-blue-500">
+                    <span class="ml-2">增值税专用发票</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 发票抬头信息 -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h3 class="text-lg font-semibold mb-4">发票抬头</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-gray-600 mb-2">抬头类型</label>
+                    <div class="flex space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="title_type" class="form-radio text-blue-500" checked>
+                            <span class="ml-2">企业单位</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="title_type" class="form-radio text-blue-500">
+                            <span class="ml-2">个人/非企业单位</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">发票抬头</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入发票抬头">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">税号</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入纳税人识别号">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">注册地址</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入注册地址">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">注册电话</label>
+                    <input type="tel" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入注册电话">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">开户银行</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入开户银行">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">银行账号</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入银行账号">
+                </div>
+            </div>
+        </div>
+
+        <!-- 发票接收信息 -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h3 class="text-lg font-semibold mb-4">接收信息</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-gray-600 mb-2">接收方式</label>
+                    <div class="flex space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="receive_type" class="form-radio text-blue-500" checked>
+                            <span class="ml-2">电子邮箱</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="receive_type" class="form-radio text-blue-500">
+                            <span class="ml-2">纸质邮寄</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">电子邮箱</label>
+                    <input type="email" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入接收邮箱">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">收件人</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入收件人姓名">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">联系电话</label>
+                    <input type="tel" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入联系电话">
+                </div>
+
+                <div>
+                    <label class="block text-gray-600 mb-2">邮寄地址</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入详细地址">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-4">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">
+            保存发票信息
+        </button>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动评价</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- 顶部导航栏 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600" onclick="history.back()">
+                <i class="fas fa-chevron-left text-lg"></i>
+            </button>
+            <h1 class="text-lg font-semibold">活动评价</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <div class="pt-16 pb-20 px-4">
+        <!-- 活动信息 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-6">
+            <h2 class="text-xl font-bold mb-2">2024年度技术创新大会</h2>
+            <div class="flex items-center text-gray-600 mb-2">
+                <i class="far fa-calendar-alt mr-2"></i>
+                <span>2024-04-15 09:00-18:00</span>
+            </div>
+            <div class="flex items-center text-gray-600">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span>上海浦东香格里拉大酒店</span>
+            </div>
+        </div>
+
+        <!-- 评分区域 -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <h3 class="text-lg font-semibold mb-4">整体评分</h3>
+            <div class="flex justify-center text-3xl text-yellow-400 space-x-4">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p class="text-center text-gray-600 mt-2">点击星星进行评分</p>
+        </div>
+
+        <!-- 评价表单 -->
+        <div class="bg-white rounded-xl shadow-sm p-6">
+            <h3 class="text-lg font-semibold mb-4">详细评价</h3>
+            
+            <!-- 评价标签 -->
+            <div class="mb-6">
+                <p class="text-gray-600 mb-3">选择标签（可多选）</p>
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-4 py-2 rounded-full bg-blue-50 text-blue-500">主题新颖</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600">干货满满</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600">组织专业</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600">服务周到</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600">场地舒适</button>
+                    <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-600">餐饮可口</button>
+                </div>
+            </div>
+
+            <!-- 评价内容 -->
+            <div class="mb-6">
+                <p class="text-gray-600 mb-3">评价内容</p>
+                <textarea
+                    class="w-full h-32 p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500"
+                    placeholder="请分享您的参会体验和建议..."
+                ></textarea>
+            </div>
+
+            <!-- 图片上传 -->
+            <div class="mb-6">
+                <p class="text-gray-600 mb-3">上传图片（选填）</p>
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-plus text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 匿名选项 -->
+            <div class="flex items-center justify-between mb-6">
+                <span class="text-gray-600">匿名评价</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-4">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">
+            提交评价
+        </button>
+    </div>
+</body>
+</html> 

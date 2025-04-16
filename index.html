@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动管理与酒店预订系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        body {
+            background-color: #F2F2F7;
+            -webkit-font-smoothing: antialiased;
+            padding: 40px;
+        }
+        .device-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+            gap: 40px;
+            padding: 20px;
+            justify-items: center;
+        }
+        .device-frame {
+            width: 390px;
+            height: 844px;
+            background: white;
+            border-radius: 44px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 0 10px #000, 0 0 0 12px #1a1a1a;
+        }
+        .dynamic-island {
+            width: 126px;
+            height: 37px;
+            background: #000;
+            border-radius: 20px;
+            position: absolute;
+            top: 11px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        .status-bar {
+            height: 44px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+        .page-frame {
+            width: 100%;
+            height: calc(100% - 44px);
+            border: none;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            color: #333;
+        }
+        .module-title {
+            grid-column: 1 / -1;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 2rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="grid grid-cols-3 gap-8 device-container">
+        <!-- 用户相关模块 -->
+        <div class="module-title">用户相关</div>
+
+        <!-- 登录页面 -->
+        <div>
+            <div class="page-title">登录</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/login.html" class="page-frame" title="登录"></iframe>
+            </div>
+        </div>
+
+        <!-- 注册页面 -->
+        <div>
+            <div class="page-title">注册</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/register.html" class="page-frame" title="注册"></iframe>
+            </div>
+        </div>
+
+        <!-- 个人中心页面 -->
+        <div>
+            <div class="page-title">个人中心</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/profile.html" class="page-frame" title="个人中心"></iframe>
+            </div>
+        </div>
+
+        <!-- 设置页面 -->
+        <div>
+            <div class="page-title">设置</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/settings.html" class="page-frame" title="设置"></iframe>
+            </div>
+        </div>
+
+        <!-- 我的收藏页面 -->
+        <div>
+            <div class="page-title">我的收藏</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/favorites.html" class="page-frame" title="我的收藏"></iframe>
+            </div>
+        </div>
+
+        <!-- 首页和活动列表模块 -->
+        <div class="module-title">首页和活动列表</div>
+
+        <!-- 首页 -->
+        <div>
+            <div class="page-title">首页</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/home.html" class="page-frame" title="首页"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动列表页面 -->
+        <div>
+            <div class="page-title">活动列表</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_list.html" class="page-frame" title="活动列表"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动详情页面 -->
+        <div>
+            <div class="page-title">活动详情</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity.html" class="page-frame" title="活动详情"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动管理模块 -->
+        <div class="module-title">活动管理</div>
+
+        <!-- 活动管理页面 -->
+        <div>
+            <div class="page-title">活动管理</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_manage.html" class="page-frame" title="活动管理"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动创建页面 -->
+        <div>
+            <div class="page-title">活动创建</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_create.html" class="page-frame" title="活动创建"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动数据统计页面 -->
+        <div>
+            <div class="page-title">活动数据统计</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_stats.html" class="page-frame" title="活动数据统计"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动参与模块 -->
+        <div class="module-title">活动参与</div>
+
+        <!-- 活动报名页面 -->
+        <div>
+            <div class="page-title">活动报名</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_register.html" class="page-frame" title="活动报名"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动签到页面 -->
+        <div>
+            <div class="page-title">活动签到</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_checkin.html" class="page-frame" title="活动签到"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动评价页面 -->
+        <div>
+            <div class="page-title">活动评价</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_feedback.html" class="page-frame" title="活动评价"></iframe>
+            </div>
+        </div>
+
+        <!-- 活动编辑页面 -->
+        <div>
+            <div class="page-title">活动编辑</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_edit.html" class="page-frame" title="活动编辑"></iframe>
+            </div>
+        </div>
+
+        <!-- 酒店相关模块 -->
+        <div class="module-title">酒店相关</div>
+
+        <!-- 酒店搜索页面 -->
+        <div>
+            <div class="page-title">酒店搜索</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/hotel_search.html" class="page-frame" title="酒店搜索"></iframe>
+            </div>
+        </div>
+
+        <!-- 酒店详情页面 -->
+        <div>
+            <div class="page-title">酒店详情</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/hotel.html" class="page-frame" title="酒店详情"></iframe>
+            </div>
+        </div>
+
+        <!-- 房型选择页面 -->
+        <div>
+            <div class="page-title">房型选择</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/hotel_room.html" class="page-frame" title="房型选择"></iframe>
+            </div>
+        </div>
+
+        <!-- 酒店预订确认页面 -->
+        <div>
+            <div class="page-title">酒店预订确认</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/hotel_booking_confirm.html" class="page-frame" title="酒店预订确认"></iframe>
+            </div>
+        </div>
+
+        <!-- 酒店评价页面 -->
+        <div>
+            <div class="page-title">酒店评价</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/hotel_review.html" class="page-frame" title="酒店评价"></iframe>
+            </div>
+        </div>
+
+        <!-- 订单和支付模块 -->
+        <div class="module-title">订单和支付</div>
+
+        <!-- 活动订单管理页面 -->
+        <div>
+            <div class="page-title">活动订单管理</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/activity_order.html" class="page-frame" title="活动订单管理"></iframe>
+            </div>
+        </div>
+
+        <!-- 订单列表页面 -->
+        <div>
+            <div class="page-title">订单列表</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/order_list.html" class="page-frame" title="订单列表"></iframe>
+            </div>
+        </div>
+
+        <!-- 订单详情页面 -->
+        <div>
+            <div class="page-title">订单详情</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/order_detail.html" class="page-frame" title="订单详情"></iframe>
+            </div>
+        </div>
+
+        <!-- 支付页面 -->
+        <div>
+            <div class="page-title">支付</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/payment.html" class="page-frame" title="支付"></iframe>
+            </div>
+        </div>
+
+        <!-- 统一支付页面 -->
+        <div>
+            <div class="page-title">统一支付</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/unified_payment.html" class="page-frame" title="统一支付"></iframe>
+            </div>
+        </div>
+
+        <!-- 发票信息页面 -->
+        <div>
+            <div class="page-title">发票信息</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/invoice.html" class="page-frame" title="发票信息"></iframe>
+            </div>
+        </div>
+
+        <!-- 消息中心模块 -->
+        <div class="module-title">消息中心</div>
+
+        <!-- 消息中心页面 -->
+        <div>
+            <div class="page-title">消息中心</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/message.html" class="page-frame" title="消息中心"></iframe>
+            </div>
+        </div>
+
+        <!-- 支付结果页面 -->
+        <div>
+            <div class="page-title">支付结果</div>
+            <div class="device-frame">
+                <div class="dynamic-island"></div>
+                <div class="status-bar">
+                    <div class="text-black text-sm font-medium">9:41</div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <iframe src="pages/payment_result.html" class="page-frame" title="支付结果"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

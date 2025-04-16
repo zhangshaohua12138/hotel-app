@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消息中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- 顶部导航栏 -->
+    <div class="bg-white px-4 py-3 flex items-center justify-between fixed top-0 w-full z-10">
+        <div class="text-lg font-medium">消息中心</div>
+        <button class="text-gray-600">
+            <i class="fas fa-ellipsis-h"></i>
+        </button>
+    </div>
+
+    <!-- 消息分类标签 -->
+    <div class="mt-14 px-4 py-2 bg-white flex space-x-4 overflow-x-auto">
+        <button class="px-4 py-2 text-blue-600 border-b-2 border-blue-600 font-medium">全部</button>
+        <button class="px-4 py-2 text-gray-600">系统通知</button>
+        <button class="px-4 py-2 text-gray-600">订单消息</button>
+        <button class="px-4 py-2 text-gray-600">活动提醒</button>
+    </div>
+
+    <!-- 消息列表 -->
+    <div class="mt-2 pb-20">
+        <!-- 系统通知 -->
+        <div class="bg-white p-4 mb-2">
+            <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-bell text-blue-500"></i>
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="flex justify-between items-start">
+                        <div class="font-medium">系统通知</div>
+                        <div class="text-sm text-gray-500">10分钟前</div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1">您的账户已成功注册，欢迎使用我们的服务！</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 订单消息 -->
+        <div class="bg-white p-4 mb-2">
+            <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <i class="fas fa-file-invoice text-green-500"></i>
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="flex justify-between items-start">
+                        <div class="font-medium">订单提醒</div>
+                        <div class="text-sm text-gray-500">30分钟前</div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1">您的订单#12345已确认，请在24小时内完成支付。</div>
+                    <button class="mt-2 text-sm text-blue-600">查看订单 ></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 活动提醒 -->
+        <div class="bg-white p-4 mb-2">
+            <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                    <i class="fas fa-calendar-alt text-purple-500"></i>
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="flex justify-between items-start">
+                        <div class="font-medium">活动提醒</div>
+                        <div class="text-sm text-gray-500">2小时前</div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1">您报名的"春季音乐节"将于明天开始，请提前做好准备。</div>
+                    <button class="mt-2 text-sm text-blue-600">查看活动详情 ></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 酒店预订提醒 -->
+        <div class="bg-white p-4 mb-2">
+            <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">
+                    <i class="fas fa-hotel text-yellow-500"></i>
+                </div>
+                <div class="ml-3 flex-1">
+                    <div class="flex justify-between items-start">
+                        <div class="font-medium">酒店预订提醒</div>
+                        <div class="text-sm text-gray-500">5小时前</div>
+                    </div>
+                    <div class="text-sm text-gray-600 mt-1">您预订的酒店房间已确认，入住时间为3月25日14:00。</div>
+                    <button class="mt-2 text-sm text-blue-600">查看预订详情 ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

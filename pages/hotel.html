@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店预订</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 酒店信息 -->
+    <div class="relative">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60" alt="酒店外观" class="w-full h-48 object-cover">
+        <button class="absolute top-4 left-4 w-8 h-8 rounded-full bg-black/30 flex items-center justify-center text-white backdrop-blur-sm">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+
+    <!-- 酒店详情 -->
+    <div class="px-4 py-4">
+        <div class="flex items-start justify-between mb-4">
+            <div>
+                <h1 class="text-xl font-semibold mb-2">上海浦东香格里拉大酒店</h1>
+                <div class="flex items-center text-gray-500 text-sm">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <span class="ml-2">五星级</span>
+                </div>
+            </div>
+            <div class="ios-badge">会议指定</div>
+        </div>
+
+        <!-- 酒店位置 -->
+        <div class="ios-card p-4 mb-6">
+            <div class="flex items-start">
+                <i class="fas fa-map-marker-alt text-ios-blue mt-1"></i>
+                <div class="ml-3">
+                    <p class="text-gray-500 text-sm">上海市浦东新区陆家嘴世纪大道88号</p>
+                    <p class="text-xs text-gray-400 mt-1">距离会场：0米（会议举办地）</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日期选择 -->
+        <div class="ios-card p-4 mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-500 text-sm">入住</p>
+                    <p class="font-medium">4月15日</p>
+                </div>
+                <div class="text-gray-300">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm">离店</p>
+                    <p class="font-medium">4月16日</p>
+                </div>
+                <button class="ios-button text-sm px-4 py-2">
+                    修改日期
+                </button>
+            </div>
+        </div>
+
+        <!-- 房型列表 -->
+        <div class="space-y-4">
+            <!-- 豪华大床房 -->
+            <div class="ios-card overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=60" alt="房间图片" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="font-medium">豪华大床房</h3>
+                            <p class="text-gray-500 text-sm">大床 | 45㎡ | 2人入住</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-ios-blue font-medium">¥888</p>
+                            <p class="text-gray-500 text-xs">含早餐</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-wifi mr-2"></i>
+                            <i class="fas fa-tv mr-2"></i>
+                            <i class="fas fa-shower"></i>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-red-500 text-sm mr-3">剩余5间</span>
+                            <button class="ios-button text-sm px-4 py-2">
+                                预订
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行政套房 -->
+            <div class="ios-card overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=60" alt="房间图片" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="font-medium">行政套房</h3>
+                            <p class="text-gray-500 text-sm">大床 | 65㎡ | 2人入住</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-ios-blue font-medium">¥1288</p>
+                            <p class="text-gray-500 text-xs">含双早</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-wifi mr-2"></i>
+                            <i class="fas fa-tv mr-2"></i>
+                            <i class="fas fa-shower mr-2"></i>
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-red-500 text-sm mr-3">剩余3间</span>
+                            <button class="ios-button text-sm px-4 py-2">
+                                预订
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 酒店政策 -->
+        <div class="mt-6 mb-20">
+            <h2 class="text-lg font-semibold mb-4">预订须知</h2>
+            <div class="ios-card p-4">
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-medium mb-2">入住政策</h3>
+                        <p class="text-gray-600 text-sm">
+                            - 入住时间：14:00后<br>
+                            - 离店时间：12:00前<br>
+                            - 需要携带身份证办理入住
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-medium mb-2">取消政策</h3>
+                        <p class="text-gray-600 text-sm">
+                            - 入住前24小时内取消，收取首晚房费<br>
+                            - 如未入住，收取全额房费
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

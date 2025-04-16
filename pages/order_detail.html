@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单详情</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- 顶部导航 -->
+    <div class="bg-white">
+        <div class="flex items-center justify-between px-4 py-4">
+            <button class="w-8 h-8 flex items-center justify-center">
+                <i class="fas fa-arrow-left text-gray-600"></i>
+            </button>
+            <h1 class="text-lg font-semibold text-gray-800">订单详情</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+
+    <!-- 订单状态 -->
+    <div class="bg-blue-50 p-6">
+        <div class="flex items-center mb-2">
+            <i class="fas fa-clock mr-2 text-blue-600"></i>
+            <span class="font-medium text-blue-800">待支付</span>
+        </div>
+        <p class="text-sm text-blue-600">请在15:00前完成支付，超时订单将自动取消</p>
+    </div>
+
+    <!-- 订单信息 -->
+    <div class="p-4 space-y-4">
+        <!-- 活动信息 -->
+        <div class="bg-white rounded-lg shadow-sm p-4">
+            <div class="flex items-start space-x-3">
+                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=100&h=100&fit=crop" alt="活动图片" class="w-20 h-20 rounded-lg object-cover">
+                <div class="flex-1">
+                    <h3 class="font-medium text-gray-800 mb-1">2024科技创新大会</h3>
+                    <p class="text-gray-600 text-sm mb-2">2024年4月15日-16日</p>
+                    <div class="text-red-600 font-medium">¥1999</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 订单信息 -->
+        <div class="bg-white rounded-lg shadow-sm p-4">
+            <h3 class="font-medium text-gray-800 mb-3">订单信息</h3>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                    <span class="text-gray-600">订单编号</span>
+                    <span class="text-gray-800">ORDER123456</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">下单时间</span>
+                    <span class="text-gray-800">2024-03-21 14:30:25</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">支付方式</span>
+                    <span class="text-gray-800">微信支付</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 参会人信息 -->
+        <div class="bg-white rounded-lg shadow-sm p-4">
+            <h3 class="font-medium text-gray-800 mb-3">参会人信息</h3>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                    <span class="text-gray-600">姓名</span>
+                    <span class="text-gray-800">张三</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">手机号</span>
+                    <span class="text-gray-800">138****8888</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">参会类型</span>
+                    <span class="text-gray-800">普通参会</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 发票信息 -->
+        <div class="bg-white rounded-lg shadow-sm p-4">
+            <div class="flex justify-between items-center">
+                <h3 class="font-medium text-gray-800">发票信息</h3>
+                <button class="text-blue-600 text-sm">
+                    申请发票 <i class="fas fa-chevron-right ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部操作栏 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-600 text-sm">应付金额</p>
+                <p class="text-xl font-semibold text-red-600">¥1999</p>
+            </div>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                立即支付
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

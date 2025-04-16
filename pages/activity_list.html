@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动列表</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">活动列表</h1>
+            <button class="text-gray-600">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="pt-14 pb-20">
+        <!-- 筛选选项 -->
+        <div class="bg-white p-4 mb-4">
+            <div class="flex space-x-4 overflow-x-auto">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm whitespace-nowrap">
+                    全部活动
+                </button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm whitespace-nowrap">
+                    即将开始
+                </button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm whitespace-nowrap">
+                    进行中
+                </button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm whitespace-nowrap">
+                    已结束
+                </button>
+            </div>
+        </div>
+
+        <!-- 活动列表 -->
+        <div class="px-4 space-y-4">
+            <!-- 活动卡片1 -->
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <img src="../assets/activity1.jpg" alt="活动图片" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-500 text-xs rounded">进行中</span>
+                        <span class="text-gray-500 text-sm">已报名 156/200</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">2024年度技术创新活动</h3>
+                    <div class="text-gray-600 text-sm space-y-1">
+                        <p><i class="far fa-calendar-alt mr-2"></i>2024年4月15日 09:00-17:00</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>上海浦东香格里拉大酒店</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-blue-500 font-semibold">¥1999</span>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm">
+                            立即报名
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活动卡片2 -->
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <img src="../assets/activity2.jpg" alt="活动图片" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="px-2 py-1 bg-green-100 text-green-500 text-xs rounded">即将开始</span>
+                        <span class="text-gray-500 text-sm">已报名 89/150</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">人工智能技术研讨会</h3>
+                    <div class="text-gray-600 text-sm space-y-1">
+                        <p><i class="far fa-calendar-alt mr-2"></i>2024年4月20日 13:30-17:00</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>上海科技大厦</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-blue-500 font-semibold">¥999</span>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm">
+                            立即报名
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活动卡片3 -->
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <img src="../assets/activity3.jpg" alt="活动图片" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded">已结束</span>
+                        <span class="text-gray-500 text-sm">已报名 200/200</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">数字化转型峰会</h3>
+                    <div class="text-gray-600 text-sm space-y-1">
+                        <p><i class="far fa-calendar-alt mr-2"></i>2024年3月25日 09:00-18:00</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>上海国际会议中心</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-gray-400 font-semibold">¥2999</span>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-500 rounded-lg text-sm">
+                            已结束
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

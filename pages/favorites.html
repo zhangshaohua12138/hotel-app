@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的收藏</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600" onclick="history.back()">
+                <i class="fas fa-chevron-left text-lg"></i>
+            </button>
+            <h1 class="text-lg font-semibold">我的收藏</h1>
+            <div class="w-8"></div>
+        </div>
+        <!-- 标签页切换 -->
+        <div class="flex border-b border-gray-100">
+            <button class="flex-1 py-3 text-blue-500 border-b-2 border-blue-500 font-medium">
+                活动收藏
+            </button>
+            <button class="flex-1 py-3 text-gray-500">
+                酒店收藏
+            </button>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <div class="mt-24 px-4 pb-24">
+        <!-- 活动收藏列表 -->
+        <div class="space-y-4">
+            <!-- 活动收藏项 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/activity-thumb.jpg" alt="活动图片" class="w-full h-48 object-cover">
+                    <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-red-500"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">2024年度技术创新大会</h3>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>2024-04-15 09:00</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>上海浦东香格里拉大酒店</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="text-blue-500 font-medium">¥1,288起</div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm">
+                            查看详情
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活动收藏项 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/activity-thumb.jpg" alt="活动图片" class="w-full h-48 object-cover">
+                    <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-red-500"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">2024数字化转型峰会</h3>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>2024-05-20 09:00</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>上海世博中心</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="text-blue-500 font-medium">¥1,588起</div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm">
+                            查看详情
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 酒店收藏列表（默认隐藏） -->
+        <div class="hidden space-y-4">
+            <!-- 酒店收藏项 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/hotel-thumb.jpg" alt="酒店图片" class="w-full h-48 object-cover">
+                    <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-red-500"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">上海浦东香格里拉大酒店</h3>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-1">4.8</span>
+                            <span class="text-sm text-gray-500">分</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>浦东新区富城路33号</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="fas fa-tag mr-2"></i>
+                        <span>五星级 · 豪华型</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-blue-500 text-lg font-medium">¥988</span>
+                            <span class="text-gray-500 text-sm">起/晚</span>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm">
+                            查看详情
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 酒店收藏项 -->
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/hotel-thumb.jpg" alt="酒店图片" class="w-full h-48 object-cover">
+                    <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-red-500"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-semibold">上海外滩茂悦大酒店</h3>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-1">4.9</span>
+                            <span class="text-sm text-gray-500">分</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>黄浦区南京东路199号</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i class="fas fa-tag mr-2"></i>
+                        <span>五星级 · 豪华型</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-blue-500 text-lg font-medium">¥1,288</span>
+                            <span class="text-gray-500 text-sm">起/晚</span>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm">
+                            查看详情
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

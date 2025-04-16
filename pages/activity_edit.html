@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑活动</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">编辑活动</h1>
+            <button class="text-red-500">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="pt-14 pb-20">
+        <form>
+            <!-- 活动封面 -->
+            <div class="bg-white p-4 mb-4">
+                <h3 class="text-lg font-semibold mb-4">活动封面</h3>
+                <div class="relative">
+                    <img src="../assets/activity1.jpg" alt="活动封面" class="w-full h-48 object-cover rounded-lg">
+                    <button class="absolute bottom-2 right-2 bg-white bg-opacity-80 px-3 py-1 rounded-lg text-sm">
+                        <i class="fas fa-camera mr-1"></i>更换封面
+                    </button>
+                </div>
+            </div>
+
+            <!-- 基本信息 -->
+            <div class="bg-white p-4 mb-4">
+                <h3 class="text-lg font-semibold mb-4">基本信息</h3>
+                
+                <!-- 活动名称 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">活动名称</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="2024年度技术创新活动">
+                </div>
+
+                <!-- 活动类型 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">活动类型</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                        <option>会议</option>
+                        <option>研讨会</option>
+                        <option>培训</option>
+                        <option>展览</option>
+                    </select>
+                </div>
+
+                <!-- 活动描述 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">活动描述</label>
+                    <textarea class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" rows="4">本次技术创新活动将邀请行业专家分享最新技术趋势，探讨未来发展方向，为参会者提供交流与合作的平台。</textarea>
+                </div>
+            </div>
+
+            <!-- 时间地点 -->
+            <div class="bg-white p-4 mb-4">
+                <h3 class="text-lg font-semibold mb-4">时间地点</h3>
+                
+                <!-- 开始时间 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">开始时间</label>
+                    <input type="datetime-local" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="2024-04-15T09:00">
+                </div>
+
+                <!-- 结束时间 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">结束时间</label>
+                    <input type="datetime-local" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="2024-04-15T17:00">
+                </div>
+
+                <!-- 活动地点 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">活动地点</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="上海浦东香格里拉大酒店">
+                </div>
+
+                <!-- 详细地址 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">详细地址</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="上海市浦东新区富城路33号">
+                </div>
+            </div>
+
+            <!-- 票务设置 -->
+            <div class="bg-white p-4 mb-4">
+                <h3 class="text-lg font-semibold mb-4">票务设置</h3>
+                
+                <!-- 票价 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">票价</label>
+                    <div class="flex items-center">
+                        <span class="text-gray-500 mr-2">¥</span>
+                        <input type="number" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="1999">
+                    </div>
+                </div>
+
+                <!-- 票数限制 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">票数限制</label>
+                    <input type="number" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="200">
+                </div>
+
+                <!-- 报名截止时间 -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">报名截止时间</label>
+                    <input type="datetime-local" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" value="2024-04-14T18:00">
+                </div>
+            </div>
+
+            <!-- 高级设置 -->
+            <div class="bg-white p-4 mb-4">
+                <h3 class="text-lg font-semibold mb-4">高级设置</h3>
+                
+                <!-- 是否需要审核 -->
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-700">报名需要审核</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                    </label>
+                </div>
+
+                <!-- 是否允许退款 -->
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-700">允许退款</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                    </label>
+                </div>
+
+                <!-- 是否显示剩余票数 -->
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700">显示剩余票数</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg">
+        <div class="flex space-x-4">
+            <button class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold">
+                保存草稿
+            </button>
+            <button class="flex-1 bg-blue-500 text-white py-3 rounded-lg font-semibold">
+                发布更新
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

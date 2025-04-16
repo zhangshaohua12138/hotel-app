@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .content-wrapper {
+            padding-bottom: 80px; /* 为底部操作栏留出空间 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="content-wrapper">
+        <!-- 活动封面 -->
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&auto=format&fit=crop&q=60" alt="活动封面" class="w-full h-48 object-cover">
+            <button class="absolute top-4 left-4 w-8 h-8 rounded-full bg-black/30 flex items-center justify-center text-white backdrop-blur-sm">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+
+        <!-- 活动信息 -->
+        <div class="px-4 py-4">
+            <div class="flex items-start justify-between mb-4">
+                <div>
+                    <h1 class="text-xl font-semibold mb-2">2024科技创新大会</h1>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2024年4月15日-16日</span>
+                    </div>
+                </div>
+                <span class="ios-badge">报名中</span>
+            </div>
+
+            <!-- 活动概要 -->
+            <div class="grid grid-cols-3 gap-4 mb-6">
+                <div class="ios-card p-3 text-center">
+                    <div class="text-lg font-semibold text-ios-blue">200</div>
+                    <div class="text-xs text-gray-500">参会人数</div>
+                </div>
+                <div class="ios-card p-3 text-center">
+                    <div class="text-lg font-semibold text-ios-blue">2</div>
+                    <div class="text-xs text-gray-500">会议天数</div>
+                </div>
+                <div class="ios-card p-3 text-center">
+                    <div class="text-lg font-semibold text-ios-blue">2</div>
+                    <div class="text-xs text-gray-500">合作酒店</div>
+                </div>
+            </div>
+
+            <!-- 活动地点 -->
+            <div class="ios-card p-4 mb-6">
+                <div class="flex items-start">
+                    <i class="fas fa-map-marker-alt text-ios-blue mt-1"></i>
+                    <div class="ml-3">
+                        <h3 class="font-medium mb-1">上海浦东香格里拉大酒店</h3>
+                        <p class="text-gray-500 text-sm">上海市浦东新区陆家嘴世纪大道88号</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活动详情 -->
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold mb-4">活动详情</h2>
+                <div class="ios-card p-4">
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-medium mb-2">会议议程</h3>
+                            <p class="text-gray-600 text-sm">
+                                Day 1（4月15日）<br>
+                                09:00-10:00 开幕式<br>
+                                10:00-12:00 主题演讲<br>
+                                14:00-17:00 分组讨论<br><br>
+                                Day 2（4月16日）<br>
+                                09:00-12:00 技术分享<br>
+                                14:00-16:00 圆桌会议<br>
+                                16:00-17:00 闭幕式
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2">住宿安排</h3>
+                            <p class="text-gray-600 text-sm">
+                                为方便参会人员，我们与两家酒店达成协议：<br>
+                                1. 上海浦东香格里拉大酒店（会议举办地）<br>
+                                2. 浦东丽思卡尔顿酒店（距会场500米）
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 报名选项 -->
+            <div class="ios-card p-4 mb-6">
+                <h2 class="text-lg font-semibold mb-4">报名选项</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <h3 class="font-medium">普通参会</h3>
+                            <p class="text-gray-500 text-sm">含会议资料+餐饮</p>
+                        </div>
+                        <div class="text-ios-blue font-medium">¥1999</div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <h3 class="font-medium">VIP参会</h3>
+                            <p class="text-gray-500 text-sm">含会议资料+餐饮+VIP晚宴</p>
+                        </div>
+                        <div class="text-ios-blue font-medium">¥2999</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部操作栏 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-gray-500 text-sm">起始价格</p>
+                <p class="text-xl font-semibold text-ios-blue">¥1999</p>
+            </div>
+            <button class="ios-button">
+                立即报名
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

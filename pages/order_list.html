@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的订单</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航 -->
+    <div class="bg-white">
+        <div class="flex items-center justify-between px-4 py-4">
+            <button class="w-8 h-8 flex items-center justify-center">
+                <i class="fas fa-arrow-left text-gray-600"></i>
+            </button>
+            <h1 class="text-lg font-semibold">我的订单</h1>
+            <div class="w-8"></div>
+        </div>
+
+        <!-- 订单状态标签页 -->
+        <div class="flex border-b border-gray-200">
+            <button class="flex-1 py-3 text-ios-blue border-b-2 border-ios-blue">
+                全部
+            </button>
+            <button class="flex-1 py-3 text-gray-500">
+                待支付
+            </button>
+            <button class="flex-1 py-3 text-gray-500">
+                已完成
+            </button>
+            <button class="flex-1 py-3 text-gray-500">
+                已取消
+            </button>
+        </div>
+    </div>
+
+    <!-- 订单列表 -->
+    <div class="p-4 space-y-4">
+        <!-- 活动订单 -->
+        <div class="ios-card p-4">
+            <div class="flex justify-between items-start mb-3">
+                <div class="flex items-center">
+                    <i class="fas fa-calendar-alt text-ios-blue mr-2"></i>
+                    <span class="font-medium">活动订单</span>
+                </div>
+                <span class="text-orange-500">待支付</span>
+            </div>
+            <div class="border-t border-gray-100 pt-3">
+                <h3 class="font-medium mb-2">2024科技创新大会</h3>
+                <p class="text-gray-500 text-sm mb-2">2024年4月15日-16日</p>
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        订单号：ORDER123456
+                    </div>
+                    <div class="text-ios-blue font-medium">
+                        ¥1999
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end space-x-3 mt-4">
+                <button class="ios-button-secondary text-sm">取消订单</button>
+                <button class="ios-button text-sm">立即支付</button>
+            </div>
+        </div>
+
+        <!-- 酒店订单 -->
+        <div class="ios-card p-4">
+            <div class="flex justify-between items-start mb-3">
+                <div class="flex items-center">
+                    <i class="fas fa-hotel text-ios-blue mr-2"></i>
+                    <span class="font-medium">酒店订单</span>
+                </div>
+                <span class="text-green-500">已完成</span>
+            </div>
+            <div class="border-t border-gray-100 pt-3">
+                <h3 class="font-medium mb-2">上海浦东香格里拉大酒店</h3>
+                <p class="text-gray-500 text-sm mb-2">豪华套房 | 2晚</p>
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        订单号：HOTEL789012
+                    </div>
+                    <div class="text-ios-blue font-medium">
+                        ¥2688
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end space-x-3 mt-4">
+                <button class="ios-button-secondary text-sm">查看详情</button>
+                <button class="ios-button text-sm">再次预订</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

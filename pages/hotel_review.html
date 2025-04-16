@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店评价</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button class="text-gray-600" onclick="history.back()">
+                <i class="fas fa-chevron-left text-lg"></i>
+            </button>
+            <h1 class="text-lg font-semibold">酒店评价</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <div class="mt-16 px-4 pb-24">
+        <!-- 酒店信息卡片 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+            <div class="flex items-start space-x-4">
+                <img src="../assets/hotel-thumb.jpg" alt="酒店图片" class="w-24 h-24 rounded-lg object-cover">
+                <div class="flex-1">
+                    <h2 class="text-lg font-semibold mb-1">上海浦东香格里拉大酒店</h2>
+                    <p class="text-gray-500 text-sm mb-2">浦东新区富城路33号</p>
+                    <div class="flex items-center text-sm">
+                        <span class="text-yellow-500"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="text-gray-400 mx-2">|</span>
+                        <span class="text-gray-600">豪华型</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 评分区域 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+            <h3 class="text-base font-semibold mb-4">评分</h3>
+            <div class="space-y-4">
+                <!-- 环境评分 -->
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">环境</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="far fa-star text-yellow-500"></i>
+                    </div>
+                </div>
+                <!-- 服务评分 -->
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">服务</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                </div>
+                <!-- 设施评分 -->
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">设施</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="far fa-star text-yellow-500"></i>
+                    </div>
+                </div>
+                <!-- 卫生评分 -->
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">卫生</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 评价内容 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+            <h3 class="text-base font-semibold mb-4">评价内容</h3>
+            <textarea
+                class="w-full h-32 p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 resize-none"
+                placeholder="请分享您的住宿体验（至少15字）"></textarea>
+            <div class="text-right text-sm text-gray-500 mt-1">0/500</div>
+        </div>
+
+        <!-- 图片上传 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+            <h3 class="text-base font-semibold mb-4">上传图片</h3>
+            <div class="grid grid-cols-4 gap-2">
+                <!-- 上传按钮 -->
+                <div class="aspect-square border-2 border-dashed border-gray-200 rounded-lg flex flex-col items-center justify-center">
+                    <i class="fas fa-camera text-gray-400 text-xl mb-1"></i>
+                    <span class="text-xs text-gray-400">添加图片</span>
+                </div>
+                <!-- 已上传图片预览 -->
+                <div class="aspect-square bg-gray-100 rounded-lg relative">
+                    <img src="../assets/room-1.jpg" alt="已上传图片" class="w-full h-full object-cover rounded-lg">
+                    <button class="absolute top-1 right-1 w-6 h-6 bg-black bg-opacity-50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-times text-white text-xs"></i>
+                    </button>
+                </div>
+                <div class="aspect-square bg-gray-100 rounded-lg relative">
+                    <img src="../assets/room-2.jpg" alt="已上传图片" class="w-full h-full object-cover rounded-lg">
+                    <button class="absolute top-1 right-1 w-6 h-6 bg-black bg-opacity-50 rounded-full flex items-center justify-center">
+                        <i class="fas fa-times text-white text-xs"></i>
+                    </button>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">最多可上传9张图片</p>
+        </div>
+
+        <!-- 标签选择 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
+            <h3 class="text-base font-semibold mb-4">添加标签</h3>
+            <div class="flex flex-wrap gap-2">
+                <button class="px-4 py-2 bg-blue-50 text-blue-500 rounded-full text-sm">地理位置好</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm">服务周到</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm">设施完善</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm">性价比高</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm">环境优美</button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm">干净整洁</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部固定按钮 -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-full font-medium">
+            提交评价
+        </button>
+    </div>
+</body>
+</html> 
