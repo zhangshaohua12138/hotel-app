@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动日历</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button onclick="history.back()" class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">活动日历</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-2">2024年6月</label>
+            <div class="grid grid-cols-7 gap-1 bg-white rounded-lg p-2 shadow-sm">
+                <div class="text-center text-gray-400">日</div>
+                <div class="text-center text-gray-400">一</div>
+                <div class="text-center text-gray-400">二</div>
+                <div class="text-center text-gray-400">三</div>
+                <div class="text-center text-gray-400">四</div>
+                <div class="text-center text-gray-400">五</div>
+                <div class="text-center text-gray-400">六</div>
+                <!-- 第一周 -->
+                <div></div><div></div><div></div><div></div><div></div><div class="text-center">1</div><div class="text-center">2</div>
+                <!-- 第二周 -->
+                <div class="text-center">3</div><div class="text-center">4</div><div class="text-center">5</div><div class="text-center">6</div><div class="text-center">7</div><div class="text-center">8</div><div class="text-center">9</div>
+                <!-- 第三周 -->
+                <div class="text-center">10</div><div class="text-center">11</div><div class="text-center">12</div><div class="text-center">13</div><div class="text-center">14</div><div class="text-center">15</div><div class="text-center">16</div>
+                <!-- 第四周 -->
+                <div class="text-center">17</div><div class="text-center">18</div><div class="text-center">19</div><div class="text-center">20</div><div class="text-center">21</div><div class="text-center">22</div><div class="text-center">23</div>
+                <!-- 第五周 -->
+                <div class="text-center">24</div><div class="text-center">25</div><div class="text-center">26</div><div class="text-center">27</div><div class="text-center">28</div><div class="text-center">29</div><div class="text-center">30</div>
+            </div>
+        </div>
+        <div>
+            <label class="block text-gray-700 font-medium mb-2">本月活动</label>
+            <div class="space-y-3">
+                <div class="bg-white rounded-lg border border-blue-100 px-4 py-3 shadow-sm flex items-center">
+                    <i class="fas fa-calendar-alt text-blue-400 mr-3"></i>
+                    <div>
+                        <div class="font-medium text-gray-800">技术创新大会</div>
+                        <div class="text-gray-500 text-sm">2024-06-12 09:00 北京国际会议中心</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg border border-blue-100 px-4 py-3 shadow-sm flex items-center">
+                    <i class="fas fa-calendar-alt text-blue-400 mr-3"></i>
+                    <div>
+                        <div class="font-medium text-gray-800">暑期亲子营</div>
+                        <div class="text-gray-500 text-sm">2024-06-25 14:00 阳光度假村</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
