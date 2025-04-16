@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房型管理</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button onclick="history.back()" class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">房型管理</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="mb-6 flex items-center space-x-2">
+            <input type="text" id="roomNameInput" class="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500" placeholder="请输入房型名称，如：豪华大床房">
+            <button onclick="addRoom()" class="px-4 py-2 bg-blue-500 text-white rounded-lg font-medium flex items-center">
+                <i class="fas fa-plus mr-2"></i>添加
+            </button>
+        </div>
+        <div>
+            <label class="block text-gray-700 font-medium mb-2">已添加房型</label>
+            <div id="roomList" class="space-y-3"></div>
+            <div id="emptyRoomTip" class="text-gray-400 text-center mt-8">暂无房型，请添加酒店房型</div>
+        </div>
+    </div>
+    <script>
+    let rooms = [
+        "豪华大床房",
+        "标准双床房",
+        "家庭套房"
+    ];
+    function addRoom() {
+        const input = document.getElementById('roomNameInput');
+        const value = input.value.trim();
+        if (!value) return;
+        rooms.push(value);
+        input.value = '';
+        renderRooms();
+    }
+    function renderRooms() {
+        const list = document.getElementById('roomList');
+        const tip = document.getElementById('emptyRoomTip');
+        list.innerHTML = '';
+        if (rooms.length === 0) {
+            tip.style.display = '';
+            return;
+        }
+        tip.style.display = 'none';
+        rooms.forEach((name, idx) => {
+            const div = document.createElement('div');
+            div.className = 'flex items-center bg-white rounded-lg border border-gray-200 px-4 py-2 shadow-sm';
+            div.innerHTML = `
+                <i class="fas fa-bed text-blue-400 mr-3"></i>
+                <span class="flex-1 text-gray-800">${name}</span>
+                <button onclick="editRoom(${idx})" class="text-gray-400 hover:text-blue-500 mr-2"><i class='fas fa-edit'></i></button>
+                <button onclick="deleteRoom(${idx})" class="text-red-400 hover:text-red-600"><i class='fas fa-trash'></i></button>
+            `;
+            list.appendChild(div);
+        });
+    }
+    function deleteRoom(idx) {
+        rooms.splice(idx, 1);
+        renderRooms();
+    }
+    function editRoom(idx) {
+        const newName = prompt('修改房型名称', rooms[idx]);
+        if (newName && newName.trim()) {
+            rooms[idx] = newName.trim();
+            renderRooms();
+        }
+    }
+    // 页面加载时渲染默认房型
+    renderRooms();
+    </script>
+</body>
+</html> 

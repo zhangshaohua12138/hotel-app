@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店相册管理</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button onclick="history.back()" class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">酒店相册管理</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="mb-6">
+            <label class="block text-gray-700 font-medium mb-2">上传新图片</label>
+            <div class="flex items-center space-x-4">
+                <input type="file" id="uploadInput" accept="image/*" class="hidden" multiple onchange="handleFiles(this.files)">
+                <button onclick="document.getElementById('uploadInput').click()" class="px-4 py-2 bg-blue-500 text-white rounded-lg font-medium flex items-center">
+                    <i class="fas fa-upload mr-2"></i>上传图片
+                </button>
+                <span class="text-gray-400 text-sm">支持多张图片，建议尺寸800x600+</span>
+            </div>
+        </div>
+        <div>
+            <label class="block text-gray-700 font-medium mb-2">已上传图片</label>
+            <div id="albumGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+            <div id="emptyTip" class="text-gray-400 text-center mt-8">暂无图片，请上传酒店环境、房型、设施等图片</div>
+        </div>
+    </div>
+    <script>
+    let images = [
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80"
+    ];
+    function handleFiles(files) {
+        for (let file of files) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                images.push(e.target.result);
+                renderAlbum();
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    function renderAlbum() {
+        const grid = document.getElementById('albumGrid');
+        const tip = document.getElementById('emptyTip');
+        grid.innerHTML = '';
+        if (images.length === 0) {
+            tip.style.display = '';
+            return;
+        }
+        tip.style.display = 'none';
+        images.forEach((src, idx) => {
+            const div = document.createElement('div');
+            div.className = 'relative group';
+            div.innerHTML = `
+                <img src="${src}" class="w-full h-40 object-cover rounded-lg border border-gray-200">
+                <button onclick="deleteImage(${idx})" class="absolute top-2 right-2 bg-black bg-opacity-60 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                    <i class='fas fa-trash'></i>
+                </button>
+            `;
+            grid.appendChild(div);
+        });
+    }
+    function deleteImage(idx) {
+        images.splice(idx, 1);
+        renderAlbum();
+    }
+    // 页面加载时渲染默认图片
+    renderAlbum();
+    </script>
+</body>
+</html> 
