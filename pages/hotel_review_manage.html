@@ -1,1 +1,77 @@
- 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酒店评论管理</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <button onclick="history.back()" class="text-gray-600">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="text-lg font-semibold">酒店评论管理</h1>
+            <div class="w-8"></div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="mb-6">
+            <label class="block text-gray-700 font-medium mb-2">最新评论</label>
+            <div id="reviewList" class="space-y-4"></div>
+            <div id="emptyReviewTip" class="text-gray-400 text-center mt-8">暂无评论</div>
+        </div>
+    </div>
+    <script>
+    let reviews = [
+        {user: '张三', content: '环境很好，服务周到', reply: ''},
+        {user: '李四', content: '房间干净，交通便利', reply: ''},
+        {user: '王五', content: '早餐丰富，位置优越', reply: ''}
+    ];
+    function renderReviews() {
+        const list = document.getElementById('reviewList');
+        const tip = document.getElementById('emptyReviewTip');
+        list.innerHTML = '';
+        if (reviews.length === 0) {
+            tip.style.display = '';
+            return;
+        }
+        tip.style.display = 'none';
+        reviews.forEach((item, idx) => {
+            const div = document.createElement('div');
+            div.className = 'bg-white rounded-lg border border-gray-200 px-4 py-3 shadow-sm';
+            div.innerHTML = `
+                <div class='flex items-center mb-2'>
+                    <i class=\"fas fa-user-circle text-blue-400 mr-2\"></i>
+                    <span class='font-medium text-gray-800 mr-2'>${item.user}</span>
+                    <button onclick=\"deleteReview(${idx})\" class=\"ml-auto text-red-400 hover:text-red-600\"><i class='fas fa-trash'></i></button>
+                </div>
+                <div class='text-gray-700 mb-2'>${item.content}</div>
+                <div class='flex items-center space-x-2'>
+                    <input type='text' class='flex-1 px-2 py-1 border border-gray-200 rounded focus:outline-none' placeholder='回复内容' value='${item.reply || ''}' id='replyInput${idx}'>
+                    <button onclick=\"replyReview(${idx})\" class='px-3 py-1 bg-blue-500 text-white rounded'>回复</button>
+                </div>
+                ${item.reply ? `<div class='mt-2 text-green-600 text-sm'>已回复：${item.reply}</div>` : ''}
+            `;
+            list.appendChild(div);
+        });
+    }
+    function deleteReview(idx) {
+        reviews.splice(idx, 1);
+        renderReviews();
+    }
+    function replyReview(idx) {
+        const input = document.getElementById('replyInput' + idx);
+        if (input.value.trim()) {
+            reviews[idx].reply = input.value.trim();
+            renderReviews();
+        }
+    }
+    // 页面加载时渲染默认评论
+    renderReviews();
+    </script>
+</body>
+</html> 

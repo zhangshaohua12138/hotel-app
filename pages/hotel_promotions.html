@@ -32,7 +32,10 @@
         </div>
     </div>
     <script>
-    let promos = [];
+    let promos = [
+        "暑期特惠",
+        "周末套餐"
+    ];
     function addPromo() {
         const input = document.getElementById('promoNameInput');
         const value = input.value.trim();
@@ -73,6 +76,8 @@
             renderPromos();
         }
     }
+    // 页面加载时渲染默认活动
+    renderPromos();
     </script>
 </body>
 </html> 
