@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通知设置</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 页面标题 -->
+    <div class="px-4 py-4 bg-white shadow-sm">
+        <div class="flex items-center">
+            <button class="mr-2" onclick="history.back()">
+                <i class="fas fa-arrow-left text-gray-600"></i>
+            </button>
+            <h1 class="text-lg font-semibold">通知设置</h1>
+        </div>
+    </div>
+
+    <!-- 通知设置列表 -->
+    <div class="mt-4">
+        <!-- 活动通知 -->
+        <div class="bg-white mb-4">
+            <div class="px-4 py-3 border-b border-gray-100">
+                <h2 class="text-base font-medium">活动通知</h2>
+            </div>
+            <div class="divide-y divide-gray-100">
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-bell text-yellow-500 mr-3"></i>
+                        <span>活动提醒</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-check text-green-500 mr-3"></i>
+                        <span>签到提醒</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-comment-alt text-blue-500 mr-3"></i>
+                        <span>活动互动消息</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 酒店通知 -->
+        <div class="bg-white mb-4">
+            <div class="px-4 py-3 border-b border-gray-100">
+                <h2 class="text-base font-medium">酒店通知</h2>
+            </div>
+            <div class="divide-y divide-gray-100">
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-hotel text-purple-500 mr-3"></i>
+                        <span>预订提醒</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-concierge-bell text-red-500 mr-3"></i>
+                        <span>入住提醒</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 系统通知 -->
+        <div class="bg-white mb-4">
+            <div class="px-4 py-3 border-b border-gray-100">
+                <h2 class="text-base font-medium">系统通知</h2>
+            </div>
+            <div class="divide-y divide-gray-100">
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-ios-blue mr-3"></i>
+                        <span>安全提醒</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-tag text-orange-500 mr-3"></i>
+                        <span>优惠活动</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-gray-500 mr-3"></i>
+                        <span>营销信息</span>
+                    </div>
+                    <label class="ios-switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 通知时段设置 -->
+        <div class="bg-white mb-4">
+            <div class="px-4 py-3 border-b border-gray-100">
+                <h2 class="text-base font-medium">通知时段设置</h2>
+            </div>
+            <div class="p-4">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-600">免打扰时段</span>
+                    <label class="ios-switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <label class="text-sm text-gray-500 mb-1 block">开始时间</label>
+                        <select class="ios-input">
+                            <option>22:00</option>
+                            <option>23:00</option>
+                            <option>00:00</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <label class="text-sm text-gray-500 mb-1 block">结束时间</label>
+                        <select class="ios-input">
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

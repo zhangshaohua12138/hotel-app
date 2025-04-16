@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号安全</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 页面标题 -->
+    <div class="px-4 py-4 bg-white shadow-sm">
+        <div class="flex items-center">
+            <button class="mr-2" onclick="history.back()">
+                <i class="fas fa-arrow-left text-gray-600"></i>
+            </button>
+            <h1 class="text-lg font-semibold">账号安全</h1>
+        </div>
+    </div>
+
+    <!-- 安全评分 -->
+    <div class="bg-white mt-4 p-4">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-base font-medium">安全评分</span>
+            <span class="text-lg font-semibold text-green-500">85</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+        </div>
+        <div class="mt-2 text-sm text-gray-500">
+            已完成4项安全设置，建议开启全部安全保护
+        </div>
+    </div>
+
+    <!-- 登录保护 -->
+    <div class="bg-white mt-4">
+        <div class="px-4 py-3 border-b border-gray-100">
+            <h2 class="text-base font-medium">登录保护</h2>
+        </div>
+        <div class="divide-y divide-gray-100">
+            <div class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-fingerprint text-green-500 mr-3"></i>
+                    <div>
+                        <div>指纹解锁</div>
+                        <div class="text-xs text-gray-500">使用指纹快速登录</div>
+                    </div>
+                </div>
+                <label class="ios-switch">
+                    <input type="checkbox" checked>
+                    <span></span>
+                </label>
+            </div>
+            <div class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-blue-500 mr-3"></i>
+                    <div>
+                        <div>异地登录验证</div>
+                        <div class="text-xs text-gray-500">异地登录需要验证</div>
+                    </div>
+                </div>
+                <label class="ios-switch">
+                    <input type="checkbox" checked>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 安全设置 -->
+    <div class="bg-white mt-4">
+        <div class="px-4 py-3 border-b border-gray-100">
+            <h2 class="text-base font-medium">安全设置</h2>
+        </div>
+        <div class="divide-y divide-gray-100">
+            <a href="#" class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-mobile-alt text-purple-500 mr-3"></i>
+                    <div>
+                        <div>手机号验证</div>
+                        <div class="text-xs text-gray-500">已绑定：138****8888</div>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-envelope text-yellow-500 mr-3"></i>
+                    <div>
+                        <div>邮箱验证</div>
+                        <div class="text-xs text-gray-500">未绑定</div>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-key text-red-500 mr-3"></i>
+                    <div>
+                        <div>修改密码</div>
+                        <div class="text-xs text-gray-500">建议定期更换密码</div>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- 账号保护 -->
+    <div class="bg-white mt-4">
+        <div class="px-4 py-3 border-b border-gray-100">
+            <h2 class="text-base font-medium">账号保护</h2>
+        </div>
+        <div class="divide-y divide-gray-100">
+            <a href="#" class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-user-shield text-ios-blue mr-3"></i>
+                    <div>
+                        <div>实名认证</div>
+                        <div class="text-xs text-gray-500">未认证</div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-xs text-red-500 mr-2">去认证</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </a>
+            <a href="#" class="flex items-center justify-between px-4 py-3">
+                <div class="flex items-center">
+                    <i class="fas fa-history text-gray-500 mr-3"></i>
+                    <div>
+                        <div>登录设备管理</div>
+                        <div class="text-xs text-gray-500">当前在线1台设备</div>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- 紧急联系人 -->
+    <div class="bg-white mt-4 mb-4">
+        <div class="px-4 py-3 border-b border-gray-100">
+            <h2 class="text-base font-medium">紧急联系人</h2>
+        </div>
+        <div class="p-4">
+            <button class="ios-button-outline w-full">
+                <i class="fas fa-plus mr-2"></i>
+                添加紧急联系人
+            </button>
+        </div>
+    </div>
+</body>
+</html> 
