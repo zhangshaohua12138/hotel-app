@@ -1,158 +1,129 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>酒店预订确认</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body class="bg-gray-50">
-    <!-- 顶部导航栏 -->
-    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-10">
-        <div class="flex items-center justify-between px-4 py-3">
-            <button class="text-gray-600" onclick="history.back()">
-                <i class="fas fa-chevron-left text-lg"></i>
-            </button>
-            <h1 class="text-lg font-semibold">预订确认</h1>
-            <div class="w-8"></div>
+    <div id="main-content">
+        <!-- 顶部导航 -->
+        <div class="bg-white sticky top-0 z-10">
+            <div class="flex items-center p-4">
+                <button onclick="history.back()" class="mr-4">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <h1 class="text-lg font-semibold">预订确认</h1>
+            </div>
         </div>
-    </div>
 
-    <!-- 主要内容区域 -->
-    <div class="mt-16 px-4 pb-24">
-        <!-- 酒店信息卡片 -->
-        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-            <div class="flex items-start space-x-4">
-                <img src="../assets/hotel-thumb.jpg" alt="酒店图片" class="w-24 h-24 rounded-lg object-cover">
-                <div class="flex-1">
-                    <h2 class="text-lg font-semibold mb-1">上海浦东香格里拉大酒店</h2>
-                    <p class="text-gray-500 text-sm mb-2">浦东新区富城路33号</p>
-                    <div class="flex items-center text-sm">
-                        <span class="text-yellow-500"><i class="fas fa-star"></i> 4.8</span>
-                        <span class="text-gray-400 mx-2">|</span>
-                        <span class="text-gray-600">豪华型</span>
+        <!-- 酒店信息 -->
+        <div class="bg-white mt-2">
+            <div class="p-4">
+                <div class="flex">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=300&q=80" alt="酒店图片" class="w-24 h-24 rounded-lg object-cover">
+                    <div class="ml-3 flex-1">
+                        <h2 class="font-medium">上海浦东香格里拉大酒店</h2>
+                        <p class="text-sm text-gray-500 mt-1">浦东新区世纪大道88号</p>
+                        <div class="flex text-yellow-400 text-sm mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-50 border-t border-b border-gray-100">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">豪华大床房</span>
+                    <span>¥888/晚</span>
                 </div>
             </div>
         </div>
 
-        <!-- 房间信息 -->
-        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-            <h3 class="text-base font-semibold mb-3">房间信息</h3>
-            <div class="space-y-2">
+        <!-- 入住信息 -->
+        <div class="bg-white mt-2 p-4">
+            <h3 class="font-medium mb-3">入住信息</h3>
+            <div class="space-y-4">
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-600">房型</span>
-                    <span class="font-medium">豪华大床房</span>
+                    <div>
+                        <div class="text-gray-500 text-sm">入住</div>
+                        <div class="font-medium mt-1">04-15 周一</div>
+                    </div>
+                    <div class="text-gray-300">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 text-sm">离店</div>
+                        <div class="font-medium mt-1">04-17 周三</div>
+                    </div>
+                    <div class="text-blue-500 text-sm">共2晚</div>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-600">入住时间</span>
-                    <span class="font-medium">2024-04-15 14:00</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">退房时间</span>
-                    <span class="font-medium">2024-04-16 12:00</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">房间数量</span>
-                    <span class="font-medium">1间</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">入住人数</span>
-                    <span class="font-medium">2人</span>
+                    <span class="text-gray-500 text-sm">房间数量</span>
+                    <div class="flex items-center space-x-4">
+                        <button class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="font-medium">1</span>
+                        <button class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-500">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 入住人信息 -->
-        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-            <h3 class="text-base font-semibold mb-3">入住人信息</h3>
+        <div class="bg-white mt-2 p-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-medium">入住人信息</h3>
+                <button class="text-blue-500 text-sm">选择常用入住人</button>
+            </div>
             <div class="space-y-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="font-medium">张三</p>
-                        <p class="text-sm text-gray-500">身份证：3101************1234</p>
-                    </div>
-                    <button class="text-blue-500 text-sm">修改</button>
+                <div>
+                    <label class="text-sm text-gray-500 mb-1 block">入住人姓名</label>
+                    <input type="text" placeholder="请输入真实姓名" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="font-medium">李四</p>
-                        <p class="text-sm text-gray-500">身份证：3101************5678</p>
-                    </div>
-                    <button class="text-blue-500 text-sm">修改</button>
+                <div>
+                    <label class="text-sm text-gray-500 mb-1 block">手机号码</label>
+                    <input type="tel" placeholder="用于接收确认信息" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
                 </div>
             </div>
         </div>
 
-        <!-- 联系人信息 -->
-        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-            <h3 class="text-base font-semibold mb-3">联系人信息</h3>
-            <div class="space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">姓名</span>
-                    <span class="font-medium">张三</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">手机号</span>
-                    <span class="font-medium">138****5678</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">邮箱</span>
-                    <span class="font-medium">zhang***@example.com</span>
-                </div>
+        <!-- 到店时间 -->
+        <div class="bg-white mt-2 p-4">
+            <h3 class="font-medium mb-3">到店时间</h3>
+            <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">预计到店时间</span>
+                <button class="flex items-center text-sm text-gray-800">
+                    14:00-18:00
+                    <i class="fas fa-chevron-right ml-2 text-gray-400"></i>
+                </button>
             </div>
         </div>
 
-        <!-- 价格明细 -->
-        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-            <h3 class="text-base font-semibold mb-3">价格明细</h3>
-            <div class="space-y-2">
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">房费</span>
-                    <span class="font-medium">¥1,288</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">服务费</span>
-                    <span class="font-medium">¥50</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-gray-600">押金</span>
-                    <span class="font-medium">¥500</span>
-                </div>
-                <div class="border-t border-gray-100 mt-2 pt-2">
-                    <div class="flex justify-between items-center text-lg">
-                        <span class="font-semibold">总价</span>
-                        <span class="font-semibold text-red-500">¥1,838</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 预订须知 -->
-        <div class="bg-white rounded-xl shadow-sm p-4 mb-4">
-            <h3 class="text-base font-semibold mb-3">预订须知</h3>
-            <div class="text-sm text-gray-600 space-y-2">
-                <p>• 请在入住时出示所有入住人的有效身份证件</p>
-                <p>• 押金将在退房时退还（扣除实际消费）</p>
-                <p>• 如需发票，请在支付完成后申请</p>
-                <p>• 入住前24小时内取消预订将收取首晚房费</p>
+        <!-- 发票信息 -->
+        <div class="bg-white mt-2 p-4">
+            <div class="flex justify-between items-center">
+                <h3 class="font-medium">发票信息</h3>
+                <button class="flex items-center text-sm text-gray-800">
+                    不开发票
+                    <i class="fas fa-chevron-right ml-2 text-gray-400"></i>
+                </button>
             </div>
         </div>
     </div>
-
-    <!-- 底部固定按钮 -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4">
-        <div class="flex items-center justify-between mb-2">
-            <div>
-                <span class="text-sm text-gray-500">总价</span>
-                <span class="text-xl font-semibold text-red-500 ml-2">¥1,838</span>
-            </div>
-            <button class="bg-blue-500 text-white px-8 py-3 rounded-full font-medium">
-                确认预订
-            </button>
-        </div>
+    <div id="bottom-spacer"></div>
+    <div id="bottom-bar" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">提交订单</button>
     </div>
+    <script src="../js/common.js"></script>
 </body>
 </html> 

@@ -3,163 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人中心</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>个人资料</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
-<body class="bg-gray-100">
-    <!-- 用户信息头部 -->
-    <div class="bg-gradient-to-r from-blue-600 to-blue-500 p-6">
-        <div class="flex items-center space-x-4">
-            <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center">
-                <i class="fas fa-user-circle text-4xl text-blue-600"></i>
-            </div>
-            <div>
-                <h1 class="text-xl font-semibold text-white">张三</h1>
-                <p class="text-blue-100">普通会员</p>
+<body class="bg-gray-50">
+    <!-- 顶部导航 -->
+    <div class="bg-white sticky top-0 z-10">
+        <div class="flex items-center p-4">
+            <button onclick="history.back()" class="mr-4">
+                <i class="fas fa-arrow-left text-gray-600"></i>
+            </button>
+            <h1 class="text-lg font-semibold">个人资料</h1>
+        </div>
+    </div>
+
+    <!-- 头像部分 -->
+    <div class="bg-white mt-2 p-4">
+        <div class="flex justify-between items-center">
+            <span class="text-gray-600">头像</span>
+            <div class="flex items-center">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80" alt="用户头像" class="w-16 h-16 rounded-full object-cover">
+                <i class="fas fa-chevron-right ml-4 text-gray-400"></i>
             </div>
         </div>
     </div>
 
-    <!-- 功能菜单 -->
-    <div class="p-4 space-y-4">
-        <!-- 我的订单 -->
-        <div class="bg-white rounded-xl shadow-sm">
-            <div class="p-4 border-b border-gray-100">
-                <div class="flex justify-between items-center">
-                    <h2 class="text-gray-800 font-medium">我的订单</h2>
-                    <a href="#" class="text-blue-600 text-sm flex items-center">
-                        查看全部
-                        <i class="fas fa-chevron-right ml-1 text-xs"></i>
-                    </a>
+    <!-- 基本信息 -->
+    <div class="bg-white mt-2">
+        <div class="divide-y divide-gray-100">
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">昵称</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">张三</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
                 </div>
             </div>
-            <div class="grid grid-cols-4 p-4">
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-clock text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">待支付</span>
-                </a>
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-calendar-check text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">已预订</span>
-                </a>
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-star text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">待评价</span>
-                </a>
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-file-invoice text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">退款/售后</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 常用功能 -->
-        <div class="bg-white rounded-xl shadow-sm">
-            <div class="p-4 border-b border-gray-100">
-                <h2 class="text-gray-800 font-medium">常用功能</h2>
-            </div>
-            <div class="grid grid-cols-4 p-4">
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-heart text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">我的收藏</span>
-                </a>
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-ticket-alt text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">优惠券</span>
-                </a>
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-map-marker-alt text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">收货地址</span>
-                </a>
-                <a href="#" class="flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                        <i class="fas fa-headset text-blue-600"></i>
-                    </div>
-                    <span class="text-gray-700 text-sm">联系客服</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 其他选项 -->
-        <div class="bg-white rounded-xl shadow-sm">
-            <div class="divide-y divide-gray-100">
-                <a href="#" class="flex items-center justify-between p-4 text-gray-800">
-                    <div class="flex items-center">
-                        <i class="fas fa-cog text-blue-600 w-5"></i>
-                        <span class="ml-3">设置</span>
-                    </div>
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">性别</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">男</span>
                     <i class="fas fa-chevron-right text-gray-400"></i>
-                </a>
-                <a href="#" class="flex items-center justify-between p-4 text-gray-800">
-                    <div class="flex items-center">
-                        <i class="fas fa-question-circle text-blue-600 w-5"></i>
-                        <span class="ml-3">帮助中心</span>
-                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">生日</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">1990-01-01</span>
                     <i class="fas fa-chevron-right text-gray-400"></i>
-                </a>
-                <a href="#" class="flex items-center justify-between p-4 text-gray-800">
-                    <div class="flex items-center">
-                        <i class="fas fa-info-circle text-blue-600 w-5"></i>
-                        <span class="ml-3">关于我们</span>
-                    </div>
-                    <i class="fas fa-chevron-right text-gray-400"></i>
-                </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 最近订单 -->
-    <div class="px-4 pb-20">
-        <h2 class="text-lg font-semibold text-gray-800 mb-4">最近订单</h2>
-        <div class="space-y-4">
-            <div class="bg-white rounded-xl shadow-sm p-4">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60" alt="酒店图片" class="w-16 h-16 rounded-lg object-cover">
-                        <div class="ml-3">
-                            <h3 class="font-medium text-gray-800">上海浦东香格里拉大酒店</h3>
-                            <p class="text-gray-600 text-sm">豪华大床房 | 4月15日-16日</p>
-                        </div>
-                    </div>
-                    <span class="text-green-600 font-medium">已确认</span>
-                </div>
-                <div class="flex justify-between items-center pt-3 border-t border-gray-100">
-                    <span class="text-gray-600">订单金额：<span class="text-red-600 font-medium">¥888</span></span>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">查看详情</button>
+    <!-- 联系方式 -->
+    <div class="bg-white mt-2">
+        <div class="divide-y divide-gray-100">
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">手机号</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">138****8888</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
                 </div>
             </div>
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">邮箱</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">example@email.com</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <div class="bg-white rounded-xl shadow-sm p-4">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center">
-                        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&auto=format&fit=crop&q=60" alt="活动图片" class="w-16 h-16 rounded-lg object-cover">
-                        <div class="ml-3">
-                            <h3 class="font-medium text-gray-800">2024科技创新大会</h3>
-                            <p class="text-gray-600 text-sm">VIP参会 | 4月15日-16日</p>
-                        </div>
-                    </div>
-                    <span class="text-yellow-600 font-medium">待付款</span>
-                </div>
-                <div class="flex justify-between items-center pt-3 border-t border-gray-100">
-                    <span class="text-gray-600">订单金额：<span class="text-red-600 font-medium">¥2999</span></span>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition-colors">立即支付</button>
+    <!-- 实名认证 -->
+    <div class="bg-white mt-2">
+        <div class="divide-y divide-gray-100">
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">实名认证</span>
+                <div class="flex items-center">
+                    <span class="text-green-500 mr-4">已认证</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
                 </div>
             </div>
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">身份证号</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">310************1234</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 账号安全 -->
+    <div class="bg-white mt-2">
+        <div class="divide-y divide-gray-100">
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">登录密码</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">修改</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex justify-between items-center p-4">
+                <span class="text-gray-600">支付密码</span>
+                <div class="flex items-center">
+                    <span class="text-gray-800 mr-4">已设置</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 注销账号 -->
+    <div class="bg-white mt-2 mb-8">
+        <div class="p-4">
+            <button class="text-red-500">注销账号</button>
         </div>
     </div>
 </body>

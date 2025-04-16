@@ -1,114 +1,140 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>活动列表</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body class="bg-gray-50">
     <!-- 顶部导航 -->
-    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-        <div class="flex items-center justify-between px-4 py-3">
-            <button class="text-gray-600">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <h1 class="text-lg font-semibold">活动列表</h1>
+    <div class="bg-white sticky top-0 z-10">
+        <div class="flex items-center justify-between p-4">
+            <h1 class="text-lg font-semibold">酒店活动</h1>
             <button class="text-gray-600">
                 <i class="fas fa-search"></i>
             </button>
         </div>
+        <!-- 分类标签 -->
+        <div class="flex space-x-4 px-4 pb-4 overflow-x-auto hide-scrollbar">
+            <button class="px-4 py-1 rounded-full bg-blue-500 text-white text-sm whitespace-nowrap">
+                全部
+            </button>
+            <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-600 text-sm whitespace-nowrap">
+                运动健身
+            </button>
+            <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-600 text-sm whitespace-nowrap">
+                美食品鉴
+            </button>
+            <button class="px-4 py-1 rounded-full bg-gray-100 text-gray-600 text-sm whitespace-nowrap">
+                亲子活动
+            </button>
+        </div>
     </div>
 
-    <!-- 主要内容 -->
-    <div class="pt-14 pb-20">
-        <!-- 筛选选项 -->
-        <div class="bg-white p-4 mb-4">
-            <div class="flex space-x-4 overflow-x-auto">
-                <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm whitespace-nowrap">
-                    全部活动
-                </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm whitespace-nowrap">
-                    即将开始
-                </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm whitespace-nowrap">
-                    进行中
-                </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm whitespace-nowrap">
-                    已结束
-                </button>
+    <!-- 活动列表 -->
+    <div class="p-4 space-y-4">
+        <!-- 瑜伽课程 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=800&q=80" alt="高级瑜伽课程" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-semibold">高级瑜伽课程</h3>
+                        <p class="text-gray-500 text-sm mt-1">
+                            <i class="far fa-clock mr-1"></i>
+                            每周六 10:00-11:30
+                        </p>
+                        <p class="text-gray-500 text-sm mt-1">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            酒店六楼瑜伽室
+                        </p>
+                    </div>
+                    <button class="text-gray-400">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="mt-3 flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-green-50 text-green-500 text-xs rounded">运动</span>
+                        <span class="px-2 py-1 bg-green-50 text-green-500 text-xs rounded">初学可参加</span>
+                    </div>
+                    <div class="text-red-500 font-medium">¥128/课</div>
+                </div>
             </div>
         </div>
 
-        <!-- 活动列表 -->
-        <div class="px-4 space-y-4">
-            <!-- 活动卡片1 -->
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-                <img src="../assets/activity1.jpg" alt="活动图片" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="px-2 py-1 bg-blue-100 text-blue-500 text-xs rounded">进行中</span>
-                        <span class="text-gray-500 text-sm">已报名 156/200</span>
+        <!-- 美食品鉴 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="法式美食品鉴" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-semibold">法式美食品鉴会</h3>
+                        <p class="text-gray-500 text-sm mt-1">
+                            <i class="far fa-clock mr-1"></i>
+                            本周五 19:00-21:00
+                        </p>
+                        <p class="text-gray-500 text-sm mt-1">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            酒店二楼法式餐厅
+                        </p>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">2024年度技术创新活动</h3>
-                    <div class="text-gray-600 text-sm space-y-1">
-                        <p><i class="far fa-calendar-alt mr-2"></i>2024年4月15日 09:00-17:00</p>
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>上海浦东香格里拉大酒店</p>
+                    <button class="text-gray-400">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="mt-3 flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-yellow-50 text-yellow-500 text-xs rounded">美食</span>
+                        <span class="px-2 py-1 bg-yellow-50 text-yellow-500 text-xs rounded">限量20位</span>
                     </div>
-                    <div class="mt-4 flex items-center justify-between">
-                        <span class="text-blue-500 font-semibold">¥1999</span>
-                        <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm">
-                            立即报名
-                        </button>
-                    </div>
+                    <div class="text-red-500 font-medium">¥368/位</div>
                 </div>
             </div>
+        </div>
 
-            <!-- 活动卡片2 -->
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-                <img src="../assets/activity2.jpg" alt="活动图片" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="px-2 py-1 bg-green-100 text-green-500 text-xs rounded">即将开始</span>
-                        <span class="text-gray-500 text-sm">已报名 89/150</span>
+        <!-- 亲子活动 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80" alt="亲子烘焙课" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-semibold">周末亲子烘焙课</h3>
+                        <p class="text-gray-500 text-sm mt-1">
+                            <i class="far fa-clock mr-1"></i>
+                            每周日 14:00-16:00
+                        </p>
+                        <p class="text-gray-500 text-sm mt-1">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            酒店三楼烘焙教室
+                        </p>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">人工智能技术研讨会</h3>
-                    <div class="text-gray-600 text-sm space-y-1">
-                        <p><i class="far fa-calendar-alt mr-2"></i>2024年4月20日 13:30-17:00</p>
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>上海科技大厦</p>
-                    </div>
-                    <div class="mt-4 flex items-center justify-between">
-                        <span class="text-blue-500 font-semibold">¥999</span>
-                        <button class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm">
-                            立即报名
-                        </button>
-                    </div>
+                    <button class="text-gray-400">
+                        <i class="far fa-heart"></i>
+                    </button>
                 </div>
-            </div>
-
-            <!-- 活动卡片3 -->
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-                <img src="../assets/activity3.jpg" alt="活动图片" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded">已结束</span>
-                        <span class="text-gray-500 text-sm">已报名 200/200</span>
+                <div class="mt-3 flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-pink-50 text-pink-500 text-xs rounded">亲子</span>
+                        <span class="px-2 py-1 bg-pink-50 text-pink-500 text-xs rounded">含材料</span>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">数字化转型峰会</h3>
-                    <div class="text-gray-600 text-sm space-y-1">
-                        <p><i class="far fa-calendar-alt mr-2"></i>2024年3月25日 09:00-18:00</p>
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>上海国际会议中心</p>
-                    </div>
-                    <div class="mt-4 flex items-center justify-between">
-                        <span class="text-gray-400 font-semibold">¥2999</span>
-                        <button class="px-4 py-2 bg-gray-200 text-gray-500 rounded-lg text-sm">
-                            已结束
-                        </button>
-                    </div>
+                    <div class="text-red-500 font-medium">¥258/组</div>
                 </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </body>
 </html> 

@@ -1,91 +1,92 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>支付结果</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body class="bg-gray-50">
-    <!-- 顶部导航 -->
-    <div class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-        <div class="flex items-center justify-between px-4 py-3">
-            <button class="text-gray-600">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-            <h1 class="text-lg font-semibold">支付结果</h1>
-            <div class="w-8"></div>
-        </div>
-    </div>
-
-    <!-- 主要内容 -->
-    <div class="pt-14 pb-20">
-        <!-- 支付状态 -->
-        <div class="bg-white p-8 text-center">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+    <div id="main-content">
+        <!-- 支付成功状态 -->
+        <div id="success" class="min-h-screen flex flex-col items-center justify-center p-4">
+            <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6">
                 <i class="fas fa-check text-4xl text-green-500"></i>
             </div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">支付成功</h2>
-            <p class="text-gray-600 mb-4">您的订单已支付成功</p>
-            <div class="text-gray-500 text-sm">
-                <p>订单号：202404150001</p>
-                <p>支付金额：¥1999.00</p>
-                <p>支付时间：2024-04-15 10:30:25</p>
+            <h1 class="text-2xl font-semibold text-gray-800 mb-2">支付成功</h1>
+            <p class="text-gray-600 mb-8">订单金额：<span class="text-red-500 font-semibold">¥1,776</span></p>
+            
+            <!-- 订单信息卡片 -->
+            <div class="bg-white rounded-xl shadow-sm w-full max-w-md p-6 mb-8">
+                <div class="flex items-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=200&q=80" alt="酒店图片" class="w-20 h-20 rounded-lg object-cover">
+                    <div class="ml-4">
+                        <h2 class="font-medium text-gray-800">上海浦东香格里拉大酒店</h2>
+                        <p class="text-gray-600 text-sm">豪华大床房</p>
+                        <p class="text-gray-600 text-sm">4月15日-16日 | 1晚</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-100 pt-4">
+                    <p class="text-gray-600 text-sm">订单号：2024041512345678</p>
+                    <p class="text-gray-600 text-sm">支付时间：2024-04-15 12:34:56</p>
+                </div>
+            </div>
+
+            <!-- 按钮组 -->
+            <div class="flex flex-col w-full max-w-md space-y-4">
+                <button class="bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">查看订单详情</button>
+                <button class="bg-gray-100 text-gray-800 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">返回首页</button>
             </div>
         </div>
 
-        <!-- 订单信息 -->
-        <div class="bg-white p-4 mt-4">
-            <h3 class="text-lg font-semibold mb-4">订单信息</h3>
-            <div class="space-y-3">
-                <div class="flex justify-between">
-                    <span class="text-gray-600">商品名称</span>
-                    <span class="text-gray-800">2024年度技术创新活动</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-600">活动时间</span>
-                    <span class="text-gray-800">2024-04-15 09:00-17:00</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-600">活动地点</span>
-                    <span class="text-gray-800">上海浦东香格里拉大酒店</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-600">购买数量</span>
-                    <span class="text-gray-800">1张</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-600">支付方式</span>
-                    <span class="text-gray-800">微信支付</span>
-                </div>
+        <!-- 支付失败状态 (默认隐藏) -->
+        <div id="failure" class="hidden min-h-screen flex flex-col items-center justify-center p-4">
+            <div class="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mb-6">
+                <i class="fas fa-times text-4xl text-red-500"></i>
             </div>
-        </div>
+            <h1 class="text-2xl font-semibold text-gray-800 mb-2">支付失败</h1>
+            <p class="text-gray-600 mb-4">订单金额：<span class="text-red-500 font-semibold">¥1,776</span></p>
+            <p class="text-gray-500 mb-8">错误原因：余额不足</p>
 
-        <!-- 发票信息 -->
-        <div class="bg-white p-4 mt-4">
-            <div class="flex items-center justify-between mb-4">
-                <h3 class="text-lg font-semibold">发票信息</h3>
-                <button class="text-blue-500 text-sm">去开具发票</button>
+            <!-- 订单信息卡片 -->
+            <div class="bg-white rounded-xl shadow-sm w-full max-w-md p-6 mb-8">
+                <div class="flex items-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=200&q=80" alt="酒店图片" class="w-20 h-20 rounded-lg object-cover">
+                    <div class="ml-4">
+                        <h2 class="font-medium text-gray-800">上海浦东香格里拉大酒店</h2>
+                        <p class="text-gray-600 text-sm">豪华大床房</p>
+                        <p class="text-gray-600 text-sm">4月15日-16日 | 1晚</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-100 pt-4">
+                    <p class="text-gray-600 text-sm">订单号：2024041512345678</p>
+                    <p class="text-gray-600 text-sm">支付时间：2024-04-15 12:34:56</p>
+                </div>
             </div>
-            <div class="text-gray-600 text-sm">
-                <p>发票类型：电子发票</p>
-                <p>发票抬头：个人</p>
-                <p>发票状态：待开具</p>
+
+            <!-- 按钮组 -->
+            <div class="flex flex-col w-full max-w-md space-y-4">
+                <button class="bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">重新支付</button>
+                <button class="bg-gray-100 text-gray-800 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">取消订单</button>
             </div>
         </div>
     </div>
-
-    <!-- 底部按钮 -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg">
-        <div class="flex space-x-4">
-            <button class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold">
-                查看订单
-            </button>
-            <button class="flex-1 bg-blue-500 text-white py-3 rounded-lg font-semibold">
-                返回首页
-            </button>
-        </div>
+    <div id="bottom-spacer"></div>
+    <div id="bottom-bar" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">返回首页</button>
     </div>
+    <script>
+        // 根据URL参数显示不同状态
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        
+        if (status === 'failure') {
+            document.getElementById('success').classList.add('hidden');
+            document.getElementById('failure').classList.remove('hidden');
+        }
+    </script>
+    <script src="../js/common.js"></script>
 </body>
 </html> 
