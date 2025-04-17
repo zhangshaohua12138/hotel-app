@@ -123,9 +123,8 @@
         <!-- 页面入口结构由JS动态渲染 -->
     </div>
     <script>
-    // 页面数据配置（每个页面的标题、iframe src、唯一id）
+    // 页面入口数据集中管理
     const pageEntries = [
-        // 用户相关
         {title: '登录', src: 'pages/login.html', module: '用户相关'},
         {title: '注册', src: 'pages/register.html', module: '用户相关'},
         {title: '个人中心', src: 'pages/profile.html', module: '用户相关'},
@@ -135,11 +134,9 @@
         {title: '我的钱包', src: 'pages/wallet.html', module: '用户相关'},
         {title: '密码重置', src: 'pages/password_reset.html', module: '用户相关'},
         {title: '通知设置', src: 'pages/notification_settings.html', module: '用户相关'},
-        // 首页与活动主流程
         {title: '首页', src: 'pages/home.html', module: '首页与活动主流程'},
         {title: '活动列表', src: 'pages/activity_list.html', module: '首页与活动主流程'},
         {title: '活动详情', src: 'pages/activity.html', module: '首页与活动主流程'},
-        // 活动管理与参与
         {title: '活动管理', src: 'pages/activity_manage.html', module: '活动管理与参与'},
         {title: '活动创建', src: 'pages/activity_create.html', module: '活动管理与参与'},
         {title: '活动编辑', src: 'pages/activity_edit.html', module: '活动管理与参与'},
@@ -152,33 +149,28 @@
         {title: '活动日历', src: 'pages/activity_calendar.html', module: '活动管理与参与'},
         {title: '活动讨论', src: 'pages/activity_discussion.html', module: '活动管理与参与'},
         {title: '联系主办方', src: 'pages/activity_contact.html', module: '活动管理与参与'},
-        // 酒店主流程
         {title: '酒店搜索', src: 'pages/hotel_search.html', module: '酒店主流程'},
         {title: '酒店详情', src: 'pages/hotel.html', module: '酒店主流程'},
         {title: '房型选择', src: 'pages/hotel_room.html', module: '酒店主流程'},
         {title: '酒店预订确认', src: 'pages/hotel_booking_confirm.html', module: '酒店主流程'},
         {title: '酒店评价', src: 'pages/hotel_review.html', module: '酒店主流程'},
         {title: '酒店地图', src: 'pages/hotel_map.html', module: '酒店主流程'},
-        // 酒店扩展功能
         {title: '酒店相册管理', src: 'pages/hotel_album.html', module: '酒店扩展功能'},
         {title: '酒店设施管理', src: 'pages/hotel_facilities_manage.html', module: '酒店扩展功能'},
         {title: '房型管理', src: 'pages/room_manage.html', module: '酒店扩展功能'},
         {title: '酒店活动管理', src: 'pages/hotel_promotions.html', module: '酒店扩展功能'},
         {title: '酒店评论管理', src: 'pages/hotel_review_manage.html', module: '酒店扩展功能'},
-        // 订单与支付
         {title: '订单列表', src: 'pages/order_list.html', module: '订单与支付'},
         {title: '订单详情', src: 'pages/order_detail.html', module: '订单与支付'},
         {title: '支付', src: 'pages/payment.html', module: '订单与支付'},
         {title: '统一支付', src: 'pages/unified_payment.html', module: '订单与支付'},
         {title: '发票信息', src: 'pages/invoice.html', module: '订单与支付'},
-        // 系统功能
         {title: '帮助中心', src: 'pages/help_center.html', module: '系统功能'},
         {title: '意见反馈', src: 'pages/feedback.html', module: '系统功能'},
         {title: '关于我们', src: 'pages/about.html', module: '系统功能'},
         {title: '隐私政策', src: 'pages/privacy_policy.html', module: '系统功能'},
         {title: '消息中心', src: 'pages/message.html', module: '系统功能'},
         {title: '支付结果', src: 'pages/payment_result.html', module: '系统功能'},
-        // 酒店扩展功能补充
         {title: '酒店对比', src: 'pages/hotel_compare.html', module: '酒店扩展功能'},
         {title: '高级筛选', src: 'pages/hotel_filter.html', module: '酒店扩展功能'},
         {title: '预订政策', src: 'pages/hotel_policy.html', module: '酒店扩展功能'},
@@ -195,54 +187,71 @@
         '系统功能',
     ];
 
-    // 渲染页面入口骨架
-    const deviceContainer = document.getElementById('deviceContainer');
-    let moduleRendered = {};
-    let entryId = 0;
-    pageEntries.forEach(entry => {
-        if (!moduleRendered[entry.module]) {
-            const moduleDiv = document.createElement('div');
-            moduleDiv.className = 'module-title';
-            moduleDiv.textContent = entry.module;
-            deviceContainer.appendChild(moduleDiv);
-            moduleRendered[entry.module] = true;
-        }
-        const entryDiv = document.createElement('div');
-        entryDiv.className = 'device-skeleton';
-        entryDiv.setAttribute('data-src', entry.src);
-        entryDiv.setAttribute('data-title', entry.title);
-        entryDiv.setAttribute('data-id', 'entry-' + entryId);
-        entryDiv.innerHTML = `
+    // 渲染函数
+    function renderModuleTitle(title) {
+        const div = document.createElement('div');
+        div.className = 'module-title';
+        div.textContent = title;
+        return div;
+    }
+    function renderSkeleton(entry, entryId) {
+        const div = document.createElement('div');
+        div.className = 'device-skeleton';
+        div.setAttribute('data-src', entry.src);
+        div.setAttribute('data-title', entry.title);
+        div.setAttribute('data-id', 'entry-' + entryId);
+        div.innerHTML = `
             <div class="skeleton-title">${entry.title}</div>
             <button class="skeleton-btn">加载页面</button>
         `;
-        deviceContainer.appendChild(entryDiv);
-        entryId++;
+        return div;
+    }
+    function renderIframe(entry) {
+        const div = document.createElement('div');
+        div.className = 'device-frame';
+        div.innerHTML = `
+            <div class="dynamic-island"></div>
+            <div class="status-bar">
+                <div class="text-black text-sm font-medium">9:41</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <iframe src="${entry.src}" class="page-frame" title="${entry.title}"></iframe>
+        `;
+        return div;
+    }
+
+    // 主渲染逻辑
+    const deviceContainer = document.getElementById('deviceContainer');
+    let moduleRendered = {};
+    let entryId = 0;
+    moduleOrder.forEach(moduleName => {
+        const moduleEntries = pageEntries.filter(e => e.module === moduleName);
+        if (moduleEntries.length) {
+            deviceContainer.appendChild(renderModuleTitle(moduleName));
+            moduleEntries.forEach(entry => {
+                const skeleton = renderSkeleton(entry, entryId);
+                deviceContainer.appendChild(skeleton);
+                entryId++;
+            });
+        }
     });
 
-    // 懒加载逻辑
+    // 懒加载与点击加载逻辑
     function loadIframe(entryDiv) {
         if (entryDiv.classList.contains('device-frame')) return;
         const src = entryDiv.getAttribute('data-src');
         const title = entryDiv.getAttribute('data-title');
         entryDiv.innerHTML = `<div class="skeleton-loading"></div><div class="skeleton-title">${title}</div>`;
-        setTimeout(() => { // loading 动画
-            entryDiv.className = 'device-frame';
-            entryDiv.innerHTML = `
-                <div class="dynamic-island"></div>
-                <div class="status-bar">
-                    <div class="text-black text-sm font-medium">9:41</div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-signal"></i>
-                        <i class="fas fa-wifi"></i>
-                        <i class="fas fa-battery-full"></i>
-                    </div>
-                </div>
-                <iframe src="${src}" class="page-frame" title="${title}"></iframe>
-            `;
+        setTimeout(() => {
+            const entry = {src, title};
+            const iframeDiv = renderIframe(entry);
+            entryDiv.replaceWith(iframeDiv);
         }, 400);
     }
-
     // Intersection Observer 懒加载
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
@@ -252,7 +261,6 @@
             }
         });
     }, { root: null, rootMargin: '0px', threshold: 0.1 });
-
     // 绑定懒加载和点击加载
     document.querySelectorAll('.device-skeleton').forEach(entryDiv => {
         observer.observe(entryDiv);
